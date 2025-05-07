@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пости автора</title>
+</head>
+<body>
+    <h2>Пости автора {{ author.name }}</h2>
+
+    <ul>
+        {% for post in posts_list %}
+            <li>
+                {{ post.title }} - {{ post.published_date }} - <a href="{% url 'post_details' post.id %}" target="_blank">Детальніше</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+</body>
+</html>
